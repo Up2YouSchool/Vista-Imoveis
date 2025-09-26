@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vista Imóveis</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+  <header>
+        <nav class="topnav">
+            <a href="index.html" class="flex items-center">
+            <img src="img/logosemfundo.png" alt="Logo Vista" width="150" height="200" /></a>
+            <a href="index.html">INÍCIO</a>
+            <a href="contato.html">CONTATO</a>
+            <a href="imoveis.html">IMÓVEIS</a>
+            <a href="login.html" title="Login"> ENTRAR🧑‍💼</a>
+        </nav>
+    </header>
+    <div class="top-section-hs1">
+        <div class="slider custom-grid-hs1">
+            <img src="img/caicaras1/copa.jpg" alt="Cômodo 1">
+            <img src="img/caicaras1/cozinha.jpg" alt="Cômodo 2">
+            <img src="img/caicaras1/churrasqueira.jpg" alt="Cômodo 3">
+            <img src="img/caicaras1/banheiro.jpg" alt="Cômodo 4">
+            <img src="img/caicaras1/closet.jpg" alt="Cômodo 5">
+            <img src="img/caicaras1/quarto.jpg" alt="Cômodo 6">
+        </div>
+    <div class="info">
+      <h2>Casa com 3 quartos, 1 suíte e 120m² de construção no Alto Caiçáras em <br>Patos de Minas - MG</h2>
+      <br>
+      <h3>Valor: R$ 1.000.000,00 <h5>R$ 3.589/m²   /  IPTU R$80/mês</h5>Corretor: Flávio Nunes <br> Contato: (34) 99999-9999 
+
+      </h3>
+      
+      <br>
+    </div>
+  </div>
+
+  <div class="infos-hs1">
+    <h2>Sobre o Imóvel:</h2>
+    <div class="infos-content">
+      <div class="features-list">
+        <div class="feature-card">130 metros de terreno</div>
+        <div class="feature-card">3 quartos, sendo 1 suíte</div>
+        <div class="feature-card">Banheiro social</div>
+        <div class="feature-card">Sala ampla para dois ambientes</div>
+        <div class="feature-card">Cozinha planejada</div>
+        <div class="feature-card">Área de serviço</div>
+        <div class="feature-card">Churrasqueira</div>
+        <div class="feature-card">2 vagas de garagem</div>
+        <div class="feature-card">Localização privilegiada, próximo a escolas, supermercados e com fácil acesso ao centro da cidade</div>
+      </div>
+      <video src="img/vdimovel.mp4" autoplay muted loop width="640" height="520" poster="img/thumb.jpg"></video>
+    </div>
+  </div>
+
+  <!-- Modal para imagem expandida -->
+<div id="imgModal" class="modal" style="display:none;">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+  <!-- Rodapé -->
+<footer class="footer">
+  <div class="footer-col">
+    <h3>IMÓVEIS</h3>
+    <ul>
+      <li>*Cadastrar imóvel</li>
+      <li>*Encomende seu imóvel</li>
+      <li>*Alugue</li>
+      <li>*Compre</li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h3>SERVIÇOS</h3>
+    <ul>
+      <li>* Financiamento e bancos</li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h3>CONTATO</h3>
+    <ul>
+      <li>*Fale conosco</li>
+      <li>*Corretores</li>
+      <li>*Quem somos</li>
+    </ul>
+  </div>
+</footer>
+  
+<script>
+  // Seleciona todas as imagens da galeria
+  document.querySelectorAll('.slider.custom-grid-hs1 img').forEach(function(img) {
+    img.onclick = function() {
+      document.getElementById('imgModal').style.display = "block";
+      document.getElementById('modalImg').src = this.src;
+    }
+  });
+
+  // Fecha o modal ao clicar no X
+  document.querySelector('.modal .close').onclick = function() {
+    document.getElementById('imgModal').style.display = "none";
+  };
+
+  // Fecha o modal ao clicar fora da imagem
+  document.getElementById('imgModal').onclick = function(e) {
+    if(e.target === this) this.style.display = "none";
+  };
+</script>
+</body>
+</html>
