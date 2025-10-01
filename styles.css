@@ -588,10 +588,12 @@ body {
   width: 80%;
   align-content: center !important; 
 }
+.imagem-cadastro {
+    flex: 1; 
+    padding: 40px; 
+}
 
-.section-cadastro img{
-    flex: 1;
-    padding: 40px;
+.imagem-cadastro img {
     width: 400px;        
     height: 250px;       
     border-radius: 8px; 
@@ -629,6 +631,7 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
+
 
 
 
