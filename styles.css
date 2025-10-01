@@ -1,4 +1,4 @@
-header {
+wheader {
     display: flex;
     justify-content: space-between;
     font-weight: bold !important;
@@ -589,7 +589,7 @@ body {
   align-content: center !important; 
 }
 
-.imagem-cadastro img{
+.section-cadastro img{
     flex: 1;
     padding: 40px;
     width: 400px;        
@@ -629,6 +629,7 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
+
 
 
 
