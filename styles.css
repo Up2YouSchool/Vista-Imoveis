@@ -575,10 +575,10 @@ body {
 }
 
 .section-cadastro {
-  height: 450px;
+  height: 550px;
   display: flex;
   align-items: center !important;
-  margin: 10px auto 0 auto;
+  margin: auto;
   gap: 5px !important;
   background: #7a0d12 !important;
   padding: 20px !important;
@@ -632,6 +632,7 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
+
 
 
 
