@@ -560,7 +560,7 @@ body {
     border-radius: 8px; 
 }
 
-.info {
+.info-cv {
     flex: 1; 
 }
 
@@ -587,6 +587,7 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
+
 
 
 
