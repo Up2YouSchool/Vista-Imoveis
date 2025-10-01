@@ -59,6 +59,20 @@ body {
 }
 
 /* Topo */
+.top-section {
+  height: 320px;
+  display: flex;
+  align-items: center !important;
+  margin: 10px auto 0 auto;
+  gap: 24px; /* Reduza para 24px ou menos */
+  background: #7a0d12;
+  padding: 32px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  justify-content: center ;
+  width: 80%;
+  align-content: center !important;
+}
 
 .top-section-hs1 {
   height: 380px;
@@ -70,6 +84,13 @@ body {
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   justify-content: space-between;
+}
+
+.slider.custom-grid {
+  border-radius: 16px;
+  display: block;
+  gap: 10px;
+  align-items: start;
 }
 
 .slider.custom-grid-hs1 {
@@ -201,7 +222,7 @@ body {
 .btn {
   background: #fff;
   color: #7a0d12;
-  font-size: 25px;
+  font-size: 20px;
   padding:5px 1%;
   border-radius: 20px;
   font-weight: bold;
@@ -210,7 +231,7 @@ body {
 }
 
 .btn:hover {
-  background: #bdb8b8;
+  background: #ddd;
 }
 
 /* Slider Superior */
@@ -543,7 +564,25 @@ body {
   color: #ffb3b3;
 }
 
-.top-section-cv {
+
+
+.close {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #ffb3b3;
+}
+
+.top-section {
     display: flex;        
     align-items: center;   
     background-color: #8B0000; 
@@ -560,7 +599,7 @@ body {
     border-radius: 8px; 
 }
 
-.info-cv {
+.info {
     flex: 1; 
 }
 
@@ -587,6 +626,7 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
+
 
 
 
