@@ -59,6 +59,22 @@ body {
 }
 
 /* Topo */
+
+.top-sectionimoveis {
+  height: 320px;
+  display: flex;
+  align-items: center !important;
+  margin: 10px auto 0 auto;
+  gap: 24px; /* Reduza para 24px ou menos */
+  background: #7a0d12;
+  padding: 32px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  justify-content: center ;
+  width: 80%;
+  align-content: center !important;
+} 
+
 .top-sectionhome {
   height: 320px;
   display: flex;
@@ -611,4 +627,5 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
+
 
