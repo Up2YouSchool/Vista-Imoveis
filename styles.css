@@ -59,7 +59,7 @@ body {
 }
 
 /* Topo */
-.top-section {
+.top-sectionhome {
   height: 320px;
   display: flex;
   align-items: center !important;
@@ -86,20 +86,13 @@ body {
   justify-content: space-between;
 }
 
-.slider.custom-grid {
-  border-radius: 16px;
-  display: block;
-  gap: 10px;
-  align-items: start;
-}
-
 .slider.custom-grid-hs1 {
   display: -moz-grid-line;
   gap: 10px;
   align-items: start;
 }
 
-.top-section .info {
+.top-section .infohome {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -548,23 +541,6 @@ body {
   box-shadow: 0 2px 16px rgba(0,0,0,0.3);
 }
 
-.close {
-  position: absolute;
-  top: 32px;
-  right: 48px;
-  color: #fff;
-  font-size: 48px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 10001;
-  transition: color 0.2s;
-}
-
-.close:hover {
-  color: #ffb3b3;
-}
-
-
 
 .close {
   position: absolute;
@@ -582,24 +558,33 @@ body {
   color: #ffb3b3;
 }
 
-.top-section {
-    display: flex;        
-    align-items: center;   
-    background-color: #8B0000; 
+.section-cadastro {
+  height: 320px;
+  display: flex;
+  align-items: center !important;
+  margin: 10px auto 0 auto;
+  gap: 5px !important;
+  background: #7a0d12 !important;
+  padding: 20px !important;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  justify-content: center ;
+  width: 80%;
+  align-content: center !important; 
 }
 
 .imagem-login {
     flex: 1; 
-    padding: 20px; 
+    padding: 40px; 
 }
 
 .imagem-login img {
-    width: 100%;        
-    height: auto;       
+    width: 400px;        
+    height: 250px;       
     border-radius: 8px; 
 }
 
-.info {
+.infocadastro {
     flex: 1; 
 }
 
@@ -626,9 +611,4 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
-
-
-
-
-
 
