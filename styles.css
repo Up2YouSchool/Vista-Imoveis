@@ -1,12 +1,12 @@
 .header {
     display: flex;
-    justify-content: space-between;
     font-weight: bold !important;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     align-items: center;
     background-color: #ede4e4;
     padding: 20px;
     box-shadow: 0 2px 4px #e6e5e5;
+    width: 80% !important;
 }
 
 .topnav {
@@ -14,8 +14,7 @@
   background-color: #ede4e4;  
   display: flex;
   align-items: center;
-  gap: 180px; /* Espaçamento entre os itens */
-  justify-content: space-between;
+  gap: 150px; /* Espaçamento entre os itens */
   height: 100px; /* Altura do menu */
 }
 
@@ -460,8 +459,18 @@ body {
 .footer-col ul li {
   font-size: 16px;
   margin-bottom: 12px;
-  color: #f1f1f1;
   font-weight: normal;
+}
+
+.footer-col ul li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #ffd6d6;
+  text-decoration: underline;
 }
 
 .features-list {
@@ -575,28 +584,28 @@ body {
 }
 
 .section-cadastro {
-  height: 550px;
+  height: 400px;
   display: flex;
   align-items: center !important;
-  margin: auto;
-  gap: 5px !important;
-  background: #7a0d12 !important;
-  padding: 20px !important;
+  margin: 10px auto 0 auto;
+  gap: 24px; /* Reduza para 24px ou menos */
+  background: #8b0f15;
+  padding: 150px;
   border-radius: 30px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   justify-content: center ;
   width: 80%;
-  align-content: center !important; 
+  align-content: center !important;
 }
 
 .imagem-cadastro {
     flex: 1; 
-    padding: 40px; 
+    padding: 50px; 
 }
 
 .imagem-cadastro img {
-    width: 400px;        
-    height: 250px;       
+    width: 500px;        
+    height: 300px;       
     border-radius: 8px; 
 }
 
@@ -618,27 +627,17 @@ body {
 .cadastro-vendedor-container {
   display: flex;
   align-items: flex-start;
-  gap: 48px;
+  gap: 12px !important;
 }
 
 .cadastro-vendedor-container form {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
+  align-items: center;
+  width: 80%;
 }
 
 .cadastro-vendedor-container input,
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
-
-
-
-
-
-
-
-
-
-
