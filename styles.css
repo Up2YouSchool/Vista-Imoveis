@@ -60,7 +60,7 @@ body {
 
 /* Topo */
 
-.top-sectionimoveis {
+.sectionimoveis {
   height: 320px;
   display: flex;
   align-items: center !important;
@@ -627,5 +627,6 @@ body {
 .cadastro-vendedor-container button {
   align-self: flex-end;
 }
+
 
 
