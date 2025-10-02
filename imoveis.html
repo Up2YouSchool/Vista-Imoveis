@@ -13,7 +13,13 @@
       <a href="index.html">INÍCIO</a>
       <a href="contato.html">CONTATO</a>
       <a href="imoveis.html">IMÓVEIS</a>
-      <a href="login.html" title="Login"> ENTRAR🧑‍💼</a>
+      <a href="login.html" title="Login" style="display:flex;align-items:center;gap:6px;">
+        <!-- Ícone SVG de login -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="8" r="4" stroke="#701318" stroke-width="2"/>
+          <path d="M4 20c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="#701318" stroke-width="2"/>
+        </svg>
+      </a>
     </nav>
   </header>
   <div class="top-sectionhome">
@@ -22,42 +28,42 @@
       <p>Confira as melhores oportunidades para encontrar seu novo lar!</p>
     </div>
   </div>
-  <!-- Barra de pesquisa por tópicos com opções -->
-<div class="search-bar">
-  <div class="search-item">
-    <select>
-      <option>Tipo de Imóvel</option>
-      <option>Casa</option>
-      <option>Apartamento</option>
-      <option>Sobrado</option>
-      <option>Terreno</option>
-    </select>
+ <!-- Barra de pesquisa por tópicos com opções -->
+  <div class="search-bar">
+    <div class="search-item">
+      <select>
+        <option>Tipo de Imóvel</option>
+        <option>Casa</option>
+        <option>Apartamento</option>
+        <option>Sobrado</option>
+        <option>Terreno</option>
+      </select>
+    </div>
+    <div class="search-item">
+      <select>
+        <option>Local pretendente</option>
+        <option>Centro</option>
+        <option>Bairro</option>
+        <option>Zona Rural</option>
+      </select>
+    </div>
+    <div class="search-item">
+      <select>
+        <option>Faixa de Preço</option>
+        <option>Até R$ 200.000</option>
+        <option>R$200.000 - R$ 500.000</option>
+        <option>Acima de R$ 500.000</option>
+      </select>
+    </div>
+    <div class="search-item">
+      <select>
+        <option>Mais Filtros</option>
+        <option>Com piscina</option>
+        <option>Com garagem</option>
+      </select>
+    </div>
+    <button class="search-item" id="btnEncontrar">Encontrar <span>🔍</span></button>
   </div>
-  <div class="search-item">
-    <select>
-      <option>Local pretendente</option>
-      <option>Centro</option>
-      <option>Bairro</option>
-      <option>Zona Rural</option>
-    </select>
-  </div>
-  <div class="search-item">
-    <select>
-      <option>Faixa de Preço</option>
-      <option>Até R$ 200.000</option>
-      <option>R$200.000 - R$ 500.000</option>
-      <option>Acima de R$ 500.000</option>
-    </select>
-  </div>
-  <div class="search-item">
-    <select>
-      <option>Mais Filtros</option>
-      <option>Com piscina</option>
-      <option>Com garagem</option>
-    </select>
-  </div>
-  <button class="search-item">Encontrar <span>🔍</span></button>
-</div>
   <div class="bottom-slider">
     <div class="casa">
       <img src="img/caicaras1/copa.jpg" alt="Casa A">
@@ -105,6 +111,7 @@
     </ul>
   </div>
 </footer>
+<script src="script.js"></script>
 </body>
 
 </html>
