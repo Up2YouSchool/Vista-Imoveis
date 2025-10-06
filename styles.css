@@ -1,12 +1,11 @@
 .header {
-    display: flex;
+    display: inline;
     font-weight: bold !important;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     align-items: center;
     background-color: #ede4e4;
     padding: 20px;
     box-shadow: 0 2px 4px #e6e5e5;
-    width: 80% !important;
 }
 
 .topnav {
@@ -14,8 +13,14 @@
   background-color: #ede4e4;  
   display: flex;
   align-items: center;
-  gap: 150px; /* Espaçamento entre os itens */
-  height: 100px; /* Altura do menu */
+  gap: 150px;
+  height: 100px;
+  width: 100vw;           /* Use vw para garantir 80% da viewport */
+  max-width: 100vw;       /* Garante que não ultrapasse 80% */
+  min-width: 320px;      /* Evita ficar muito pequeno em telas pequenas */
+  margin: 0 auto;        /* Centraliza o cabeçalho */
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
 .topnavbutton {
@@ -24,7 +29,6 @@
   background-color: #ffffff;  
   display: flex;
   align-items: center;
-  gap: 150px; /* Espaçamento entre os itens */
   justify-content: space-between;
   height: 60px; /* Altura do menu */
 }
@@ -55,6 +59,8 @@ body {
   font-weight: bold !important;
   line-height: 1.6;
   padding: 20px;
+  min-height: 100vh;
+  width: 100%;
 }
 
 /* Topo */
@@ -87,6 +93,35 @@ body {
   justify-content: center ;
   width: 80%;
   align-content: center !important;
+  text-align: center;
+  font-size: 14px;
+}
+.slider.custom-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+}
+
+.top-sectionhomevendas {
+  height: 320px;
+  display: flex;
+  align-items: center !important;
+  margin: 10px auto 0 auto;
+  gap: 24px; /* Reduza para 24px ou menos */
+  background: #7a0d12;
+  padding: 32px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  justify-content: center ;
+  width: 80%;
+  align-content: center !important;
+  text-align: center;
+}
+.top-section .infohomevendas {
+  display: flex;
+  text-align: center;  /* Centraliza o texto */
 }
 
 .section-cadastro-imovel {
@@ -658,7 +693,7 @@ body {
   margin: 10px auto 0 auto;
   gap: 24px; /* Reduza para 24px ou menos */
   background: #8b0f15;
-  padding: 150px;
+  padding: 50px;
   border-radius: 30px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   justify-content: center ;
@@ -672,8 +707,8 @@ body {
 }
 
 .imagem-cadastro img {
-    width: 500px;        
-    height: 300px;       
+    width: 400px;        
+    height: 250px;       
     border-radius: 8px; 
 }
 
@@ -708,4 +743,64 @@ body {
 .cadastro-vendedor-container input,
 .cadastro-vendedor-container button {
   align-self: flex-end;
+}
+
+.bottom-slidervendas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas, cada uma com 2 casas */
+  gap: 32px;
+  justify-items: center;
+  margin: 40px auto;
+  max-width: 1100px;
+  color: #701318;
+}
+
+.bottom-slidervendas .casa {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 95%;
+  max-width: 320px;
+}
+
+.bottom-slidervendas img {
+  width: 100%;
+  max-width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.bottom-slidervendas .casa a {
+  margin-top: 8px;
+  background: #701318;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.bottom-slidervendas .casa a:hover {
+  background: #a32b2b;
+}
+
+@media (max-width: 900px) {
+  .bottom-slidervendas {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .bottom-slidervendas {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
