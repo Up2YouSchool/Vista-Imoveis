@@ -22,10 +22,13 @@
       </a>
     </nav>
   </header>
-  <div class="top-sectionhome">
-    <div class="infohome">
+  <div class="top-sectionhomevendas">
+    <div class="slider custom-grid">
+      <video src="img/videovista.mp4" autoplay muted loop playsinline border-radius="12px" width="500" height="260" poster="img/thumb.jpg" style="max-width:550px; border-radius:16px; display:block;"></video>
+    </div>
+    <div class="infohomevendas">
       <h1>Imóveis à Venda</h1>
-      <p>Confira as melhores oportunidades para encontrar seu novo lar!</p>
+      <p>O lar dos seus sonhos está aqui! <br>Encontre imóveis exclusivos, modernos e prontos para receber você e sua família.<br> Viva novas histórias em um novo endereço!</p>
     </div>
   </div>
  <!-- Barra de pesquisa por tópicos com opções -->
@@ -64,55 +67,130 @@
     </div>
     <button class="search-item" id="btnEncontrar">Encontrar <span>🔍</span></button>
   </div>
-  <div class="bottom-slider">
+  <!-- Slider de imagens grandes -->
+  <div class="bottom-slidervendas">
     <div class="casa">
-      <img src="img/caicaras1/copa.jpg" alt="Casa A">
-      <p>Alto do Caiçaras - 3 quartos, 1 suíte, 1 banheiro.</p>
+      <img src="img/caicaras1/copa.jpg" alt="Casa 1" class="expand-img">
+      <p>Casa com 3 quartos, 1 suíte no Alto Caiçáras em Patos de Minas - MG.</p>
+      <p>R$1.000.000,00
+      </p>
       <a href="casa1.html">Ver detalhes</a>
     </div>
     <div class="casa">
-      <img src="img/imo2.jpg" alt="Casa B">
-      <p>Casa B - 2 suítes, varanda gourmet.</p>
+      <img src="img/h2.png" alt="Casa 2" class="expand-img">
+      <p>Casa Moderna 4 quartos Bairro Jardim vitoria Patos de Minas.</p>
+      <p>R$1.200.000,00</p>
+      <a href="casa2.html">Ver detalhes</a>
     </div>
     <div class="casa">
-      <img src="img/imo3.jpg" alt="Casa C">
-      <p>Casa C - 4 quartos, área verde ampla.</p>
+      <img src="img/h3.png" alt="Casa 3" class="expand-img">
+      <p>Casa estilo Americano a venda Condominio luxuoso Condomínio Villágio Patos De Minas.</p>
+      <p>R$1.800.000,00</p>
+      <a href="casa3.html">Ver detalhes</a>
     </div>
     <div class="casa">
-      <img src="img/imo4.jpg" alt="Casa D">
-      <p>Casa D - Sobrado moderno, 2 vagas.</p>
+      <img src="img/h4.png" alt="Casa 4" class="expand-img">
+      <p>Casa estilo Americano a venda Condominio luxuoso Condomínio Villágio Patos De Minas.</p>
+      <P>R$2.000.000,00</P>
+      <a href="casa4.html">Ver detalhes</a>
     </div>
     <div class="casa">
-      <img src="img/imo5.jpg" alt="Casa E">
-      <p>Casa E - Condomínio fechado, lazer completo.</p>
+      <img src="img/h5.png" alt="Casa 5" class="expand-img">
+      <p>Casa Jardim Recanto Patos de minas MG.</p>
+      <P>R$500.000,00</P>
+      <a href="casa5.html">Ver detalhes</a>
+    </div>
+    <div class="casa">
+      <img src="img/h6.png" alt="Casa 6" class="expand-img">
+      <p>Casa De alto padrão bairro Copacabana Patos de Minas MG</p>
+      <p>R$1.200.000,00</p>
+      <a href="casa6.html">Ver detalhes</a>
+    </div>
+    <div class="casa">
+      <img src="img/h7.png" alt="Casa 7" class="expand-img">
+      <p>Casa bairro Bela Vista Patos De Minas MG</p>
+      <p>R$850.000</p>
+      <a href="casa7.html">Ver detalhes</a>
+    </div>
+    <div class="casa">
+      <img src="img/h8.png" alt="Casa 8" class="expand-img">
+      <p>Casa luxuosa Patos de Minas  bairro caiçaras com 2 suítes</p>
+      <p>R$1.500.000,00</p>
+      <a href="casa8.html">Ver detalhes</a>
     </div>
   </div>
-  <footer class="footer">
-  <div class="footer-col">
-    <h3>IMÓVEIS</h3>
-    <ul>
-      <li><a href="imoveis.html">Exposição e Venda</a></li>
-      <li><a href="cadastro-imovel.html">Cadastrar Imóvel</a></li>
-      <li><a href="cadastro-vendedor.html">Cadastrar Vendedor</a></li>
-    </ul>
-  </div>
-  <div class="footer-col">
-    <h3>SERVIÇOS</h3>
-    <ul>
-      <li><a href="contato.html">Fale Conosco</a></li>
-      <li><a href="sobre.html">Quem Somos</a></li>
-    </ul>
-  </div>
-  <div class="footer-col">
-    <h3>ACESSO</h3>
-    <ul>
-      <li><a href="login.html">Login do Vendedor</a></li>
-      <li><a href="index.html">Página Inicial</a></li>
-    </ul>
-  </div>
-</footer>
-<script src="script.js"></script>
-</body>
 
+  <!-- Modal para imagem expandida -->
+  <div id="imgModal" class="modal" style="display:none;">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- Barra de pesquisa por tópicos com opções -->
+  <div class="search-bar">
+    <div class="search-item">
+      <select>
+        <option>Tipo de Imóvel</option>
+        <option>Casa</option>
+        <option>Apartamento</option>
+        <option>Sobrado</option>
+        <option>Terreno</option>
+      </select>
+    </div>
+    <div class="search-item">
+      <select>
+        <option>Local pretendente</option>
+        <option>Centro</option>
+        <option>Bairro</option>
+        <option>Zona Rural</option>
+      </select>
+    </div>
+    <div class="search-item">
+      <select>
+        <option>Faixa de Preço</option>
+        <option>Até R$ 200.000</option>
+        <option>R$200.000 - R$ 500.000</option>
+        <option>Acima de R$ 500.000</option>
+      </select>
+    </div>
+    <div class="search-item">
+      <select>
+        <option>Mais Filtros</option>
+        <option>Com piscina</option>
+        <option>Com garagem</option>
+      </select>
+    </div>
+    <button class="search-item" id="btnEncontrar">Encontrar <span>🔍</span></button>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-col">
+      <h3>IMÓVEIS</h3>
+      <ul>
+        <li><a href="imoveis.html">Exposição e Venda</a></li>
+        <li><a href="cadastro-imovel.html">Cadastrar Imóvel</a></li>
+        <li><a href="cadastro-vendedor.html">Cadastrar Vendedor</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>SERVIÇOS</h3>
+      <ul>
+        <li><a href="contato.html">Fale Conosco</a></li>
+        <li><a href="sobre.html">Quem Somos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>ACESSO</h3>
+      <ul>
+        <li><a href="login.html">Login do Vendedor</a></li>
+        <li><a href="index.html">Página Inicial</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Inclua o arquivo externo de JavaScript -->
+  <script src="script.js"></script>
+</body>
 </html>
 
