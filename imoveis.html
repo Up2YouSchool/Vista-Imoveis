@@ -9,19 +9,28 @@
 <body>
   <header>
     <nav class="topnav">
-      <a href="index.html"><img src="img/logosemfundo.png" alt="Logo Vista" width="150" height="200" /></a>
-      <a href="index.html">INÍCIO</a>
-      <a href="contato.html">CONTATO</a>
-      <a href="imoveis.html">IMÓVEIS</a>
-      <a href="login.html" title="Login" style="display:flex;align-items:center;gap:6px;">
-        <!-- Ícone SVG de login -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="8" r="4" stroke="#701318" stroke-width="2"/>
-          <path d="M4 20c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="#701318" stroke-width="2"/>
-        </svg>
-      </a>
-    </nav>
-  </header>
+  <a href="index.html" class="logo-link">
+    <img src="img/logosemfundo.png" alt="Logo Vista" width="150" height="200" />
+  </a>
+
+  <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#701318" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18" />
+    </svg>
+  </button>
+
+  <div class="nav-links-container" id="nav-links-container">
+    <a href="index.html">INÍCIO</a>
+    <a href="contato.html">CONTATO</a>
+    <a href="imoveis.html">IMÓVEIS</a>
+    <a href="login.html" title="Login" style="display:flex;align-items:center;gap:6px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="8" r="4" stroke="#701318" stroke-width="2"/>
+        <path d="M4 20c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="#701318" stroke-width="2"/>
+      </svg>
+    </a>
+  </div>
+</nav>
   <div class="top-sectionhomevendas">
     <div class="slider custom-grid">
       <video src="img/videovista.mp4" autoplay muted loop playsinline border-radius="12px" width="500" height="260" poster="img/thumb.jpg" style="max-width:550px; border-radius:16px; display:block;"></video>
@@ -70,22 +79,22 @@
   <!-- Slider de imagens grandes -->
   <div class="bottom-slidervendas">
     <div class="casa">
-      <img src="img/caicaras1/copa.jpg" alt="Casa 1" class="expand-img">
+      <img src="img/casa1/salaprincipal.jpg" alt="Casa 1" class="expand-img">
       <p>Casa com 3 quartos, 1 suíte no Alto Caiçáras em Patos de Minas - MG.</p>
       <p>R$1.000.000,00
       </p>
       <a href="casa1.html">Ver detalhes</a>
     </div>
     <div class="casa">
-      <img src="img/h2.png" alt="Casa 2" class="expand-img">
+      <img src="img/casa2/frentecasa.png" alt="Casa 2" class="expand-img">
       <p>Casa Moderna 4 quartos Bairro Jardim vitoria Patos de Minas.</p>
-      <p>R$1.200.000,00</p>
+      <p>R$3.000.000</p>
       <a href="casa2.html">Ver detalhes</a>
     </div>
     <div class="casa">
-      <img src="img/h3.png" alt="Casa 3" class="expand-img">
-      <p>Casa estilo Americano a venda Condominio luxuoso Condomínio Villágio Patos De Minas.</p>
-      <p>R$1.800.000,00</p>
+      <img src="img/caicaras1/copa.jpg" alt="Casa 3" class="expand-img">
+      <p>Casa com 2 quartos, 1 suíte e 130m de construção em Patos de Minas - MG</p>
+      <p>R$800.000,00</p>
       <a href="casa3.html">Ver detalhes</a>
     </div>
     <div class="casa">
