@@ -1,10 +1,26 @@
-// Expansão de imagens do slider (modal)
+// Adiciona um único "ouvinte" que espera a página carregar completamente
 document.addEventListener('DOMContentLoaded', function() {
-  // Modal de imagem expandida
-  var imgs = document.querySelectorAll('.expand-img');
-  var modal = document.getElementById('imgModal');
-  var modalImg = document.getElementById('modalImg');
-  var closeBtn = document.querySelector('.modal .close');
+
+  // ===============================================
+  // ======== FUNCIONALIDADE DO MENU MOBILE ========
+  // ===============================================
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navLinksContainer = document.getElementById('nav-links-container');
+
+  if (hamburgerBtn && navLinksContainer) {
+    hamburgerBtn.addEventListener('click', function() {
+      // Adiciona ou remove a classe 'active' para mostrar/esconder o menu
+      navLinksContainer.classList.toggle('active');
+    });
+  }
+
+  // ===============================================
+  // ===== EXPANSÃO DE IMAGENS (MODAL) =============
+  // ===============================================
+  const imgs = document.querySelectorAll('.expand-img');
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+  const closeBtn = document.querySelector('.modal .close');
 
   if (imgs && modal && modalImg && closeBtn) {
     imgs.forEach(function(img) {
@@ -19,12 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     modal.onclick = function(e) {
-      if(e.target === modal) modal.style.display = "none";
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
     };
   }
 
-  // Feedback ao clicar em "Encontrar" na barra de pesquisa
-  var btnEncontrar = document.getElementById('btnEncontrar');
+  // ===============================================
+  // ====== FEEDBACK DO BOTÃO DE BUSCA =============
+  // ===============================================
+  const btnEncontrar = document.getElementById('btnEncontrar');
   if (btnEncontrar) {
     btnEncontrar.onclick = function(e) {
       e.preventDefault();
@@ -32,21 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
-  // Exemplo de validação de formulário (procure por forms com id="cadastroForm")
-  var cadastroForm = document.getElementById('cadastroForm');
-  if (cadastroForm) {
-    cadastroForm.onsubmit = function(e) {
-      var email = document.getElementById('email');
-      if(email && !email.value.includes('@')) {
-        alert('Digite um e-mail válido!');
-        e.preventDefault();
-      }
-    }
-  }
-});
-
-// Navegação por setas no slider custom-grid-hs1
-document.addEventListener('DOMContentLoaded', function() {
+  // ===============================================
+  // ========= NAVEGAÇÃO SLIDER (SETAS) ============
+  // ===============================================
   const slider = document.getElementById('sliderHS1');
   const left = document.getElementById('arrowLeft');
   const right = document.getElementById('arrowRight');
@@ -54,4 +62,5 @@ document.addEventListener('DOMContentLoaded', function() {
     left.onclick = () => slider.scrollBy({ left: -300, behavior: 'smooth' });
     right.onclick = () => slider.scrollBy({ left: 300, behavior: 'smooth' });
   }
+
 });
