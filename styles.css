@@ -125,7 +125,7 @@ body {
 }
 
 .section-cadastro-imovel {
-  height: 350px;
+  height: 450px;
   text-align: center;
   display: flex;
   align-items: center !important;
@@ -692,7 +692,7 @@ body {
 }
 
 .section-cadastro {
-  height: 400px;
+  height: 450px;
   display: flex;
   align-items: center !important;
   margin: 10px auto 0 auto;
@@ -712,8 +712,8 @@ body {
 }
 
 .imagem-cadastro img {
-    width: 400px;        
-    height: 250px;       
+    width: 500px;        
+    height: 350px;       
     border-radius: 8px; 
 }
 
