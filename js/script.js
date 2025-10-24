@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       } catch (error) {
         mensagemStatus.textContent = `Erro: ${error.message}`;
-        mensagemStatus.style.color = 'red';
+        mensagemStatus.style.color = 'white';
       }
     });
   }
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       } catch (error) {
         mensagemStatus.textContent = `Erro: ${error.message}`;
-        mensagemStatus.style.color = 'red';
+        mensagemStatus.style.color = 'white';
       }
     });
   }
