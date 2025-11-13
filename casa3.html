@@ -63,6 +63,16 @@
       <video src="img/caicaras1/videoh3.mp4" autoplay muted loop width="640" height="520" poster="img/thumb.jpg"></video>
     </div>
   </div>
+ <!-- botão para abrir galeria no mobile (visível só em mobile via CSS) -->
+  <button id="openGalleryMobile" class="mobile-gallery-btn" aria-haspopup="dialog">Ver galeria</button>
+
+  <!-- Modal de galeria (mostra imagens empilhadas no mobile) -->
+  <div id="galleryModal" class="modal gallery-modal" style="display:none;">
+    <div class="modal-inner">
+      <button class="close gallery-close" aria-label="Fechar">&times;</button>
+      <div class="gallery-list"></div>
+    </div>
+  </div>
 
   <!-- Modal para imagem expandida -->
   <div id="imgModal" class="modal" style="display:none;">
@@ -70,6 +80,14 @@
     <img class="modal-content" id="modalImg">
   </div>
 
+  <!-- botão e modal galeria móvel -->
+  <button id="openGalleryMobile" class="mobile-gallery-btn" aria-haspopup="dialog">Ver galeria</button>
+  <div id="galleryModal" class="modal gallery-modal" style="display:none;">
+    <div class="modal-inner">
+      <button class="close gallery-close" aria-label="Fechar">&times;</button>
+      <div class="gallery-list"></div>
+    </div>
+  </div>
   <!-- Rodapé -->
   <footer class="footer">
     <div class="footer-col">
