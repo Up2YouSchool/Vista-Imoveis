@@ -696,7 +696,7 @@ body {
 
 /* Rodapé */
 .footer {
-  background: #701318;
+  background: #701318 !important;
   color: #fff;
   display: flex;
   justify-content: space-around;
@@ -1026,3 +1026,29 @@ body {
       grid-column: span 1; /* Garante que o último item não se expanda indevidamente */
   }
 }
+
+/* Header / Navbar overrides */
+.navbar { padding: .6rem 0; }
+.navbar-brand img { max-height: 60px; object-fit: contain; }
+
+/* Carousel images */
+.carousel .carousel-item img { height: 520px; object-fit: cover; }
+@media (max-width: 991px) {
+  .carousel .carousel-item img { height: 320px; }
+}
+
+/* Features list */
+.features-list .list-group-item { font-size: .95rem; }
+
+/* Mobile gallery button (for small screens we show the button) */
+.mobile-gallery-btn { display: none; }
+@media (max-width: 991px) {
+  .mobile-gallery-btn { display: inline-block; }
+}
+
+/* Gallery modal list: stacked images */
+.gallery-list img { width: 100%; height: auto; border-radius: .5rem; cursor: pointer; }
+
+/* Small adjustments */
+.footer { background: #f8f9fa; }
+.footer .footer-col h3 { font-size: 1rem; font-weight: 600; }
