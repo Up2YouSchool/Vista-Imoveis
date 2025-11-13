@@ -63,6 +63,129 @@ document.addEventListener('DOMContentLoaded', function () {
     right.onclick = () => slider.scrollBy({ left: 300, behavior: 'smooth' });
   }
 
+  /* ---------- Galeria móvel (empilha imagens no modal) ---------- */
+  const openBtn = document.getElementById('openGalleryMobile');
+  const galleryModal = document.getElementById('galleryModal');
+  const galleryList = galleryModal ? galleryModal.querySelector('.gallery-list') : null;
+  const galleryClose = galleryModal ? galleryModal.querySelector('.gallery-close') : null;
+  const imgModal = document.getElementById('imgModal');
+  const imgModalImg = document.getElementById('modalImg');
+
+  function openGalleryModal() {
+    if (!galleryList) return;
+    galleryList.innerHTML = '';
+    // pega imagens principais (expand-img) e imagens do bottom-slider
+    const images = [
+      ...document.querySelectorAll('.expand-img'),
+      ...document.querySelectorAll('.bottom-slider img'),
+      ...document.querySelectorAll('.slider img')
+    ];
+    images.forEach(img => {
+      const clone = img.cloneNode(true);
+      clone.removeAttribute('width');
+      clone.removeAttribute('height');
+      clone.style.width = '100%';
+      clone.style.height = 'auto';
+      clone.classList.add('gallery-item');
+      // ao clicar na imagem do modal, abre modal grande
+      clone.addEventListener('click', () => {
+        openImageModal(clone.src, clone.alt || '');
+      });
+      galleryList.appendChild(clone);
+    });
+    galleryModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGalleryModal() {
+    if (!galleryModal) return;
+    galleryModal.style.display = 'none';
+    document.body.style.overflow = '';
+    if (galleryList) galleryList.innerHTML = '';
+  }
+
+  function openImageModal(src, alt) {
+    if (!imgModal || !imgModalImg) return;
+    imgModalImg.src = src;
+    imgModalImg.alt = alt;
+    imgModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeImageModal() {
+    if (!imgModal) return;
+    imgModal.style.display = 'none';
+    document.body.style.overflow = '';
+    if (imgModalImg) imgModalImg.src = '';
+  }
+
+  if (openBtn) openBtn.addEventListener('click', openGalleryModal);
+  if (galleryClose) galleryClose.addEventListener('click', closeGalleryModal);
+  if (galleryModal) {
+    galleryModal.addEventListener('click', function (e) {
+      if (e.target === galleryModal) closeGalleryModal();
+    });
+  }
+
+  // ligações para modal de imagem expandida
+  document.querySelectorAll('.slider img, .expand-img, .bottom-slider img').forEach(img => {
+    img.addEventListener('click', (e) => {
+      openImageModal(e.currentTarget.src, e.currentTarget.alt || '');
+    });
+  });
+  // fechar modal de imagem
+  const imgClose = imgModal ? imgModal.querySelector('.close') : null;
+  if (imgClose) imgClose.addEventListener('click', closeImageModal);
+  if (imgModal) imgModal.addEventListener('click', (e) => { if (e.target === imgModal) closeImageModal(); });
+
+  // ===============================================
+  // ========== CADASTRO DE IMÓVEIS ================
+  // ===============================================
+  const btnCadastrarImovel = document.getElementById('btn-cadastrar-imovel');
+
+  if (btnCadastrarImovel) {
+    const inputTitulo = document.getElementById('titulo-imovel');
+    const inputEndereco = document.getElementById('endereco-imovel');
+    const inputPreco = document.getElementById('preco-imovel');
+    const inputMetros = document.getElementById('metros-imovel');
+    const inputQuartos = document.getElementById('quartos-imovel');
+    const inputBanheiros = document.getElementById('banheiros-imovel');
+    const mensagemStatus = document.getElementById('mensagem-cadastro-imovel');
+    btnCadastrarImovel.addEventListener('click', async () => {
+      try {
+        const dadosDoImovel = {
+          titulo: inputTitulo.value,
+          endereco: inputEndereco.value,
+          preco: parseFloat(inputPreco.value),
+          metros_quadrados: parseFloat(inputMetros.value),
+          quartos: parseInt(inputQuartos.value),
+          banheiros: parseInt(inputBanheiros.value)
+        };
+
+        if (!dadosDoImovel.titulo || !dadosDoImovel.endereco) {
+          throw new Error('Título e Endereço são obrigatórios.');
+        }
+
+        mensagemStatus.textContent = 'Cadastrando...';
+        mensagemStatus.style.color = 'blue';
+
+        const novoImovel = await criarImovel(dadosDoImovel);
+
+        mensagemStatus.textContent = `Imóvel "${novoImovel.titulo}" cadastrado com sucesso! (ID: ${novoImovel.id})`;
+        mensagemStatus.style.color = 'green';
+        inputTitulo.value = '';
+        inputEndereco.value = '';
+        inputPreco.value = '';
+        inputMetros.value = '';
+        inputQuartos.value = '';
+        inputBanheiros.value = '';
+
+      } catch (error) {
+        mensagemStatus.textContent = `Erro: ${error.message}`;
+        mensagemStatus.style.color = 'white';
+      }
+    });
+  }
 });
 
 // =============================================================================================
@@ -147,52 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (error) {
         mensagemStatus.textContent = `Erro: ${error.message}`;
         mensagemStatus.style.color = 'red';
-      }
-    });
-  }
-
-  const btnCadastrarImovel = document.getElementById('btn-cadastrar-imovel');
-
-  if (btnCadastrarImovel) {
-    const inputTitulo = document.getElementById('titulo-imovel');
-    const inputEndereco = document.getElementById('endereco-imovel');
-    const inputPreco = document.getElementById('preco-imovel');
-    const inputMetros = document.getElementById('metros-imovel');
-    const inputQuartos = document.getElementById('quartos-imovel');
-    const inputBanheiros = document.getElementById('banheiros-imovel');
-    const mensagemStatus = document.getElementById('mensagem-cadastro-imovel');
-    btnCadastrarImovel.addEventListener('click', async () => {
-      try {
-        const dadosDoImovel = {
-          titulo: inputTitulo.value,
-          endereco: inputEndereco.value,
-          preco: parseFloat(inputPreco.value),
-          metros_quadrados: parseFloat(inputMetros.value),
-          quartos: parseInt(inputQuartos.value),
-          banheiros: parseInt(inputBanheiros.value)
-        };
-
-        if (!dadosDoImovel.titulo || !dadosDoImovel.endereco) {
-          throw new Error('Título e Endereço são obrigatórios.');
-        }
-
-        mensagemStatus.textContent = 'Cadastrando...';
-        mensagemStatus.style.color = 'blue';
-
-        const novoImovel = await criarImovel(dadosDoImovel);
-
-        mensagemStatus.textContent = `Imóvel "${novoImovel.titulo}" cadastrado com sucesso! (ID: ${novoImovel.id})`;
-        mensagemStatus.style.color = 'green';
-        inputTitulo.value = '';
-        inputEndereco.value = '';
-        inputPreco.value = '';
-        inputMetros.value = '';
-        inputQuartos.value = '';
-        inputBanheiros.value = '';
-
-      } catch (error) {
-        mensagemStatus.textContent = `Erro: ${error.message}`;
-        mensagemStatus.style.color = 'white';
       }
     });
   }
